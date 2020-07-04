@@ -122,12 +122,12 @@ public class StudentRatingService {
         return rating;
     }
 
-    Double calculateScore(List<Double> scores, Double distribution) {
+    Double calculateScore(List<Double> scores, Double weight) {
         Double totalScore = 0.0;
         int size = scores.size();
         if (size != 0) {
             for (Double score : scores)
-                totalScore = totalScore + (distribution / size) * score;
+                totalScore = totalScore + (weight / size) * score;
         }
         return totalScore / 100;
     }
